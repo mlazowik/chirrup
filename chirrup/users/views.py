@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from chirp.models import Chirp
@@ -12,8 +13,15 @@ class RegisterUser(CreateView):
     success_url = '/'
 
 
+@login_required
+def users(request):
+    context = {'users': get_user_model().objects.all()}
+    return render(request, 'users/users.html', context)
+
+
+@login_required
 def user_page(request, username):
     user = get_user_model().objects.get(username=username)
 
-    context = {'chirps': Chirp.objects.filter(user=user)}
+    context = {'chirps': Chirp.objects.filter(user=user)[:20]}
     return render(request, 'users/user.html', context)
