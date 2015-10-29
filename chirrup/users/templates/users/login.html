@@ -1,25 +1,30 @@
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% extends "webview/base.html" %}
+{% load chirps %}
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
+{% block main %}
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
-    {% csrf_token %}
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
 
-    {{ form.username.label_tag }}
-    {{ form.username }}
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+        {% csrf_token %}
 
-    {{ form.password.label_tag }}
-    {{ form.password }}
+        {{ form.username.label_tag }}
+        {{ form.username }}
 
-    <input type="submit" value="Login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+
+        <input type="submit" value="Login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+{% endblock %}

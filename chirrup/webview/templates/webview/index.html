@@ -1,4 +1,7 @@
+{% extends "webview/base.html" %}
 {% load chirps %}
 
-{% chirp_form %}
-{% chirps chirps %}
+{% block main %}
+    {% chirp_form %}
+    {% chirps chirps %}
+{% endblock %}
