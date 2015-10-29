@@ -3,4 +3,5 @@ from chirp.models import Chirp
 
 
 def index(request):
-    return render(request, 'webview/index.html')
+    context = {'chirps': Chirp.objects.all()[:20]}
+    return render(request, 'webview/index.html', context)

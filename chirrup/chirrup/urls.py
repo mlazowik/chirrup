@@ -21,11 +21,13 @@ from webview import views as web_views
 from chirp import views as chirp_views
 
 urlpatterns = [
-    url('^$', web_views.index),
+    url(r'^$', web_views.index),
 
-    url('^login/$', auth_views.login, {'template_name': 'users/login.html'}),
-    url('^logout/$', auth_views.logout, {'next_page': '/'}),
-    url('^register/$', users_views.RegisterUser.as_view()),
+    url(r'^login/$', auth_views.login, {'template_name': 'users/login.html'}),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/'}),
+    url(r'^register/$', users_views.RegisterUser.as_view()),
 
-    url('^chirp/add$', chirp_views.get_chirp),
+    url(r'^chirp/add$', chirp_views.get_chirp),
+
+    url(r'^user/(?P<username>\w+)/$', users_views.user_page)
 ]

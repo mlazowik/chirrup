@@ -1,5 +1,4 @@
 from django import template
-from chirp.models import Chirp
 from chirp.forms import ChirpForm
 
 register = template.Library()
@@ -11,8 +10,8 @@ def chirp(chirp):
 
 
 @register.inclusion_tag('chirp/chirp_list.html')
-def chirps():
-    return {'chirps': Chirp.objects.all()[:20]}
+def chirps(chirps):
+    return {'chirps': chirps}
 
 
 @register.inclusion_tag('chirp/chirp_form.html', takes_context=True)
