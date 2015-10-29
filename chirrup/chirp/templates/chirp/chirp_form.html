@@ -1,0 +1,6 @@
+<form action="/chirp/add" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Chirp" />
+    <input type="hidden" name="next" value="{{ request.path }}" />
+</form>

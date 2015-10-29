@@ -1,0 +1,7 @@
+{% load chirps %}
+
+<ol>
+    {% for chirp in chirps %}
+    <li>{% chirp chirp %}</li>
+    {% endfor %}
+</ol>
