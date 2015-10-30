@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
+    'compressor',
     'users',
     'chirp',
     'webview',
@@ -70,9 +72,22 @@ TEMPLATES = [
     },
 ]
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS, STATICFILES_FINDERS
+
 TEMPLATE_CONTEXT_PROCESSORS += (
     'django.core.context_processors.request',
+)
+
+STATICFILES_FINDERS += (
+    'djangobower.finders.BowerFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
+
+BOWER_INSTALLED_APPS = (
+    'jquery#2.1.4',
+    'bootstrap-sass#3.3.5'
 )
 
 WSGI_APPLICATION = 'chirrup.wsgi.application'
@@ -107,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Others
