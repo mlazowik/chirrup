@@ -8,16 +8,26 @@
 }
 
 .site-navigation__header {
-  @extend .navbar.header;
+  @extend .navbar-header;
 }
 
 .site-navigation__brand {
   @extend .navbar-brand;
 }
 
+.site-navigation__content {
+  @extend .navbar-collapse;
+  @extend .collapse;
+}
+
 .site-navigation__list {
   @extend .nav;
   @extend .navbar-nav;
+
+  &--left {
+    @extend .site-navigation__list;
+    @extend .navbar-left;
+  }
 
   &--right {
     @extend .site-navigation__list;

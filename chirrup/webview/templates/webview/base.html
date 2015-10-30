@@ -15,22 +15,30 @@
 <nav class="site-navigation">
     <div class="site-navigation__container">
         <header class="site_navigation__header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-navigation" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="site-navigation__brand" href="/">Chirrup</a>
         </header>
-        <ul class="site-navigation__list">
-            <li><a href="/">Home</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="/users">Users</a></li>
-            {% endif %}
-        </ul>
-        <ul class="site-navigation__list--right">
-            {% if user.is_authenticated %}
-                <li><a href="/logout">Logout</a></li>
-            {% else %}
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-            {% endif %}
-        </ul>
+        <div class="site-navigation__content" id="site-navigation">
+            <ul class="site-navigation__list">
+                <li><a href="/">Home</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/users">Users</a></li>
+                {% endif %}
+            </ul>
+            <ul class="site-navigation__list--right">
+                {% if user.is_authenticated %}
+                    <li><a href="/logout">Logout</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -41,6 +49,7 @@
 
 {% compress js %}
 <script type="text/javascript" src='{% static 'jquery/dist/jquery.js' %}'></script>
+<script type="text/javascript" src='{% static 'bootstrap-sass/assets/javascripts/bootstrap.js' %}'></script>
 {% endcompress %}
 
 </body>
