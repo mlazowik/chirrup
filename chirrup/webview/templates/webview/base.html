@@ -6,7 +6,8 @@
 <head>
     <title>Chirrup</title>
     {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static "base/site-navigation.scss" %}" />
+    {% block css %}
+    {% endblock %}
     {% endcompress %}
 </head>
 <body>
@@ -33,7 +34,7 @@
     </div>
 </nav>
 
-<main>
+<main class="site-container">
     {% block main %}
     {% endblock %}
 </main>

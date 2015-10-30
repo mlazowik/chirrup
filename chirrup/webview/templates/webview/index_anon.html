@@ -1,5 +1,10 @@
 {% extends "webview/base.html" %}
 {% load chirps %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static "base/index_anon.scss" %}" />
+{% endblock %}
 
 {% block main %}
     <header>

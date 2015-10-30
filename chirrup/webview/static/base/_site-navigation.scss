@@ -1,8 +1,10 @@
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
-
 .site-navigation {
   @extend .navbar;
   @extend .navbar-default;
+}
+
+.site-navigation__container {
+  @extend .container;
 }
 
 .site-navigation__header {
@@ -11,10 +13,6 @@
 
 .site-navigation__brand {
   @extend .navbar-brand;
-}
-
-.site-navigation__container {
-  @extend .container-fluid;
 }
 
 .site-navigation__list {
