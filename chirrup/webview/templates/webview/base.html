@@ -5,20 +5,32 @@
 <html lang="en">
 <head>
     <title>Chirrup</title>
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "base/base.scss" %}" />
+    {% endcompress %}
 </head>
 <body>
 
 <nav class="site-navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-        {% if user.is_authenticated %}
-            <li><a href="/users">Users</a></li>
-            <li><a href="/logout">Logout</a></li>
-        {% else %}
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
-        {% endif %}
-    </ul>
+    <div class="site-navigation__container">
+        <header class="site_navigation__header">
+            <a class="site-navigation__brand" href="/">Chirrup</a>
+        </header>
+        <ul class="site-navigation__list">
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/users">Users</a></li>
+            {% endif %}
+        </ul>
+        <ul class="site-navigation__list--right">
+            {% if user.is_authenticated %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
 </nav>
 
 <main>
