@@ -86,6 +86,8 @@ STATICFILES_FINDERS += (
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
 
 BOWER_INSTALLED_APPS = (
+    'bootstrap#3.3.5',
+    'bootswatch#3.3.5+4',
     'jquery#2.1.4',
     'bootstrap-sass#3.3.5'
 )
