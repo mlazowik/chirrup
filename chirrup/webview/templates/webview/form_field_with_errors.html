@@ -1,0 +1,11 @@
+<div class="form__group{% if field.errors %}--error{% endif %}">
+    {{ field.label_tag }}
+    {{ field }}
+    <span class="form__group__help">
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <strong>{{ error|escape }}</strong><br>
+        {% endfor %}
+    {% endif %}
+    </span>
+</div>

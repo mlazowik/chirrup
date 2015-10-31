@@ -1,7 +1,20 @@
 .form__group {
   @extend .form-group;
 
+  &--error {
+    @extend .form__group;
+    @extend .has-error;
+  }
+
+  &__help {
+    @extend .help-block;
+  }
+
   input {
     @extend .form-control;
+  }
+
+  label {
+    @extend .control-label;
   }
 }

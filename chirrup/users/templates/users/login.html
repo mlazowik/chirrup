@@ -13,34 +13,38 @@
     <div class="login">
         <div class="login__container">
             {% if form.errors %}
-                <p>Your username and password didn't match. Please try again.</p>
-                {% endif %}
+                <div class="alert--danger">
+                    <p>Your username and password didn't match. Please try again.</p>
+                </div>
+            {% endif %}
 
-                {% if next %}
+            {% if next %}
+                <div class="alert--info">
                     {% if user.is_authenticated %}
                     <p>Your account doesn't have access to this page. To proceed,
                     please login with an account that has access.</p>
                     {% else %}
                     <p>Please login to see this page.</p>
                     {% endif %}
-                {% endif %}
+                </div>
+            {% endif %}
 
-                <form class="login-form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
-                    {% csrf_token %}
+            <form class="login-form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+                {% csrf_token %}
 
-                    <div class="form__group">
-                        {{ form.username.label_tag }}
-                        {{ form.username }}
-                    </div>
+                <div class="form__group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                </div>
 
-                    <div class="form__group">
-                        {{ form.password.label_tag }}
-                        {{ form.password }}
-                    </div>
+                <div class="form__group">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                </div>
 
-                    <input class="button" type="submit" value="Login" />
-                    <input type="hidden" name="next" value="{{ next }}" />
-                </form>
+                <input class="button" type="submit" value="Login" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
         </div>
     </div>
 {% endblock %}
