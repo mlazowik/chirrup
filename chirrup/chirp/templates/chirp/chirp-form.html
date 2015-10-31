@@ -1,7 +1,7 @@
 <form class="chirp-form" action="/chirp/add" method="post">
     {% csrf_token %}
     {{ form.text }}
-    <span class="chirp-form__info">Max 140 characters</span>
+    <span class="chirp-form__info">Max. 140 characters</span>
     <input type="submit" class="chirp-form__submit" value="Chirp" />
     <input type="hidden" name="next" value="{{ request.path }}" />
     <div class="clearfix"></div>
