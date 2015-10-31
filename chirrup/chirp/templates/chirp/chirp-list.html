@@ -1,6 +1,11 @@
 {% load chirps %}
 
 <ol class="chirp-list">
+    {% if with_form %}
+        <li class="chirp-list__chirp">
+            {% include "chirp/chirp-form.html" %}
+        </li>
+    {% endif %}
     {% for chirp in chirps %}
         <li class="chirp-list__chirp">{% chirp chirp %}</li>
     {% endfor %}

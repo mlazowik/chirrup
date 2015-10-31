@@ -5,6 +5,6 @@ from chirp.models import Chirp
 def index(request):
     if request.user.is_authenticated():
         context = {'chirps': Chirp.objects.all()[:20]}
-        return render(request, 'webview/index_user.html', context)
+        return render(request, 'webview/index-user.html', context)
     else:
-        return render(request, 'webview/index_anon.html')
+        return render(request, 'webview/index-anon.html')

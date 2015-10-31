@@ -1,4 +1,9 @@
 .button {
   @extend .btn;
   @extend .btn-default;
+
+  &--primary {
+    @extend .btn;
+    @extend .btn-primary;
+  }
 }

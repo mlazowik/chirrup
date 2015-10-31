@@ -1,0 +1,19 @@
+.chirp-form {
+  textarea {
+    @extend .form-control;
+    height: 5em;
+    resize: none;
+  }
+}
+
+.chirp-form__info {
+  @extend .small;
+  @extend .text-muted;
+  margin-left: 3px;
+}
+
+.chirp-form__submit {
+  @extend .button--primary;
+  @extend .pull-right;
+  margin-top: 1em;
+}
