@@ -1,5 +1,5 @@
-<div class="chirp">
-    {{ chirp.user }}
-    {{ chirp.text }}
-    {{ chirp.added }}
+<div class="chirp" xmlns="http://www.w3.org/1999/html">
+    <span class="chirp__author"><a href="/users/{{ chirp.user }}">{{ chirp.user }}</a></span>
+    <span class="chirp__date">{{ chirp.added|timesince }}</span>
+    <p class="chirp__content">{{ chirp.text }}</p>
 </div>

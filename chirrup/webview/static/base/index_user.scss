@@ -1,1 +1,14 @@
 @import "base/base";
+@import "chirp/chirp";
+
+.index {
+  @extend .row;
+}
+
+.index__container {
+  @extend .col-sm-8;
+  @extend .col-sm-offset-2;
+
+  @extend .col-md-6;
+  @extend .col-md-offset-3;
+}

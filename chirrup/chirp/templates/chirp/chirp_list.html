@@ -1,7 +1,7 @@
 {% load chirps %}
 
-<ol>
+<ol class="chirp-list">
     {% for chirp in chirps %}
-    <li>{% chirp chirp %}</li>
+        <li class="chirp-list__chirp">{% chirp chirp %}</li>
     {% endfor %}
 </ol>

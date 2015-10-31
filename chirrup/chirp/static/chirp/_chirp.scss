@@ -1,0 +1,26 @@
+.chirp__author {
+  font-weight: bold;
+}
+
+.chirp__date {
+  @extend .small;
+  @extend .text-muted;
+
+  &:before {
+    content: "\00b7  ";
+  }
+}
+
+.chirp__content {
+  @extend .lead;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.chirp-list {
+  @extend .list-group;
+}
+
+.chirp-list__chirp {
+  @extend .list-group-item;
+}
