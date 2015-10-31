@@ -1,1 +1,10 @@
 @import "base/base";
+
+.welcome {
+  @extend .jumbotron;
+
+  &__action {
+    @extend .button--primary;
+    @extend .btn-lg;
+  }
+}
