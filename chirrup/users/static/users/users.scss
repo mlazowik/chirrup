@@ -1,1 +1,13 @@
 @import "base/base";
+
+.users {
+  @extend .row;
+}
+
+.users__container {
+  @extend .col-md-12;
+}
+
+.users__list {
+  padding-left: 0;
+}

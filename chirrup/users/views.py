@@ -24,5 +24,9 @@ def users(request):
 def user_page(request, username):
     user = get_user_model().objects.get(username=username)
 
-    context = {'chirps': Chirp.objects.filter(user=user)[:settings.CHIRPS_PER_PAGE]}
+    context = {
+        'username': username,
+        'chirps': Chirp.objects.filter(user=user)[:settings.CHIRPS_PER_PAGE]
+    }
+
     return render(request, 'users/user.html', context)
