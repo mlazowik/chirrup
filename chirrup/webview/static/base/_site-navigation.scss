@@ -11,6 +11,11 @@
   @extend .navbar-header;
 }
 
+.site-navigation__toggle {
+  @extend .navbar-toggle;
+  @extend .collapsed;
+}
+
 .site-navigation__brand {
   @extend .navbar-brand;
 }
@@ -18,6 +23,10 @@
 .site-navigation__content {
   @extend .navbar-collapse;
   @extend .collapse;
+
+  &--active {
+    @extend .active;
+  }
 }
 
 .site-navigation__list {

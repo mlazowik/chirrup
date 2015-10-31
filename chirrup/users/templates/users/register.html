@@ -5,6 +5,10 @@
 <link rel="stylesheet" type="text/x-scss" href="{% static "users/register.scss" %}" />
 {% endblock %}
 
+{% block navigation %}
+    {% include "webview/navigation.html" with page="register" %}
+{% endblock %}
+
 {% block main %}
     <form action="" method="post">{% csrf_token %}
         {{ form.as_p }}

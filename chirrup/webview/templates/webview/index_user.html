@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/x-scss" href="{% static "base/index_user.scss" %}" />
 {% endblock %}
 
+{% block navigation %}
+    {% include "webview/navigation.html" with page="home" %}
+{% endblock %}
+
 {% block main %}
     {% chirp_form %}
     {% chirps chirps %}

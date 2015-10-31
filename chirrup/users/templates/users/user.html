@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/x-scss" href="{% static "users/user.scss" %}" />
 {% endblock %}
 
+{% block navigation %}
+    {% include "webview/navigation.html" with page="user" %}
+{% endblock %}
+
 {% block main %}
     {% chirps chirps %}
 {% endblock %}

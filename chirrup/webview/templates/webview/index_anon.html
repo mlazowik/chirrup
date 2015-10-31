@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/x-scss" href="{% static "base/index_anon.scss" %}" />
 {% endblock %}
 
+{% block navigation %}
+    {% include "webview/navigation.html" with page="home" %}
+{% endblock %}
+
 {% block main %}
     <header>
         <h1>Welcome to Chirrup!</h1>

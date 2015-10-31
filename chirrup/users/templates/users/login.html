@@ -5,6 +5,10 @@
 <link rel="stylesheet" type="text/x-scss" href="{% static "users/login.scss" %}" />
 {% endblock %}
 
+{% block navigation %}
+    {% include "webview/navigation.html" with page="login" %}
+{% endblock %}
+
 {% block main %}
     <div class="login">
         <div class="login__container">
