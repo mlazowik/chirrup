@@ -4,7 +4,7 @@ from django.db import models
 
 class Chirp(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    text = models.CharField(max_length=140)
+    text = models.CharField(max_length=settings.MAX_CHIRP_LENGTH)
     added = models.DateTimeField()
 
     class Meta:
