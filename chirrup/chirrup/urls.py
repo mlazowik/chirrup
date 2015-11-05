@@ -30,5 +30,5 @@ urlpatterns = [
     url(r'^chirp/add$', chirp_views.get_chirp),
 
     url(r'^users/$', users_views.users),
-    url(r'^users/(?P<username>\w+)/$', users_views.user_page),
+    url(r'^users/(?P<username>[\w.]+)/$', users_views.user_page),
 ]
